@@ -1,0 +1,82 @@
+@import "../../../styles.scss";
+
+.login-container {
+  background-color: #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  padding: 30px;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.login-container img {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #fff;
+}
+
+.input-container {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #fff;
+  background-color: transparent;
+  color: $amarillo-claro;
+  font-family: "Bricolage Grotesque", sans-serif;
+  transition: border-bottom-color 0.3s ease-in-out;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-bottom-color: #fff; /* Set it to the same color as the initial state */
+}
+
+button {
+  background-color: $amarillo-claro;
+  color: #24261a;
+  padding: 12px 120px; /* Increased padding to make the button wider */
+  border: 1px solid black;
+  border-radius: 54px;
+  cursor: pointer;
+  margin: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: transparent;
+  border: 1px solid $amarillo-claro;
+  color: #fff;
+}
+
+.extra-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.contact-buttons {
+  display: none; /* Remove contact buttons */
+}
+
+.credit {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 12px;
+}

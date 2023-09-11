@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/scss/bootstrap';
+/* You can add global styles to this file, and also import other style files */$base-color: #c6538c;
+$amarillo-base:  #fff300;
+$amarillo-claro:  #e1fd74;
+
+body{
+
+background-color: $amarillo-base;
+}
+/* Importing Bootstrap SCSS file. */

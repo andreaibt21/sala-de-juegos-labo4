@@ -1,0 +1,29 @@
+<div class="login-container">
+  <img src="../../../assets/logo.png" alt="logo" />
+  <h1>Iniciar Sesión</h1>
+  <form id="login-form">
+    <div class="input-container">
+      <input
+        type="text"
+        name="email"
+        placeholder="Correo"
+        required
+        [(ngModel)]="usuario.email"
+      />
+    </div>
+    <div class="input-container">
+      <input
+        type="password"
+        name="password"
+        placeholder="Contraseña"
+        required
+        [(ngModel)]="usuario.password"
+      />
+    </div>
+    <button type="submit" (click)="Ingresar()">Ingresar</button>
+    <button type="submit" (click)="Registrar()">Registrarse</button>
+  </form>
+  <div class="extra-options">
+    <!-- Removed Forgot Password link -->
+  </div>
+</div>
