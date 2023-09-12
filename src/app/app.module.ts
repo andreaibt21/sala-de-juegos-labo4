@@ -13,6 +13,10 @@ import { Error404Component } from './componentes/error404/error404.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFireModule } from '@angular/fire/compat';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
+import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
+import { MayoromenorComponent } from './componentes/mayoromenor/mayoromenor.component';
+import { PreguntadosComponent } from './componentes/preguntados/preguntados.component';
+import { MijuegoComponent } from './componentes/mijuego/mijuego.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDmXWxD8ANkEhm2_G70BArVqDwCopHymW8",
@@ -33,7 +37,11 @@ const firebaseConfig = {
     RegistroComponent,
     ErrorComponent,
     Error404Component,
-    NavbarComponent
+    NavbarComponent,
+    AhorcadoComponent,
+    MayoromenorComponent,
+    PreguntadosComponent,
+    MijuegoComponent
   ],
   imports: [
     BrowserModule,
