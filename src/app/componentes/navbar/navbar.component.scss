@@ -1,6 +1,12 @@
+@import "../../../styles.scss";
+
 a{
   border: none !important;
 }
 p{
   margin: 0 !important;
+}
+button{
+
+  background-color :$amarillo-claro !important;
 }

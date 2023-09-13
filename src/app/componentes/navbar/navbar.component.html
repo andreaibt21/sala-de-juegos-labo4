@@ -4,7 +4,7 @@
     *ngIf="usuarioLogueado|async as usuarioLogueado"
     (click)="handleVerificarUsuario()">{{usuarioLogueado.email}}</p>
     <p class="navbar-brand" href="#"> Sala de juegos de Andrea </p>
-    <button  *ngIf="usuarioLogueado|async as usuarioLogueado" class="navbar-brand btn btn-warning" (click)="handleClick()">
+    <button  *ngIf="usuarioLogueado|async as usuarioLogueado" class="navbar-brand btn " (click)="handleClick()">
       Cerrar Sesión
     </button>
   </div>
