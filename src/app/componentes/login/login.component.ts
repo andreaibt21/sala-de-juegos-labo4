@@ -12,21 +12,30 @@ export class LoginComponent {
     email: '',
     password: '',
   };
+  public error: boolean = false;
+  public mensaje: string = '';
+
   constructor(private AuthService: AuthService, private router: Router) {}
   Ingresar() {
     console.log(this.usuario);
     const { email, password } = this.usuario;
     this.AuthService.login(email, password).then((res) => {
-      this.router.navigateByUrl('home');
-      console.log('se logueó', res);
+      if (res !== '') {
+        this.error = true;
+        this.mensaje = res;
+        console.log('errooooor');
+        console.log(res);
+      } else {
+        this.error = false;
+        this.router.navigateByUrl('home');
+        console.log('se logueó', res);
+      }
     });
   }
 
-  Registrar() {
+  AccesoDirecto() {
     console.log(this.usuario);
-    const { email, password } = this.usuario;
-    this.AuthService.registro(email, password).then((res) => {
-      console.log('se registró', res);
-    });
+    this.usuario.email = 'test@gmail.com';
+    this.usuario.password = '123456';
   }
 }

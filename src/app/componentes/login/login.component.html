@@ -20,10 +20,14 @@
         [(ngModel)]="usuario.password"
       />
     </div>
+    <h3 *ngIf="error" class="error">{{ mensaje }}</h3>
+
+    <button type="submit" (click)="AccesoDirecto()">Acceso directo</button>
     <button type="submit" (click)="Ingresar()">Ingresar</button>
-    <button type="submit" (click)="Registrar()">Registrarse</button>
+  
   </form>
-  <div class="extra-options">
-    <!-- Removed Forgot Password link -->
+
+  <div class="">
+
   </div>
 </div>

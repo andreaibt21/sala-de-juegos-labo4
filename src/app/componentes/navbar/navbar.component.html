@@ -1,11 +1,29 @@
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <p class="navbar-brand" href="#"
-    *ngIf="usuarioLogueado|async as usuarioLogueado"
-    (click)="handleVerificarUsuario()">{{usuarioLogueado.email}}</p>
-    <p class="navbar-brand" href="#"> Sala de juegos de Andrea </p>
-    <button  *ngIf="usuarioLogueado|async as usuarioLogueado" class="navbar-brand btn " (click)="handleClick()">
+    <p
+      class="navbar-brand"
+      href="#"
+      *ngIf="usuarioLogueado | async as usuarioLogueado"
+      (click)="handleVerificarUsuario()"
+    >
+      {{ usuarioLogueado.email }}
+    </p>
+    <p class="navbar-brand" href="#">Sala de juegos de Andrea</p>
+    <button
+      *ngIf="usuarioLogueado | async as usuarioLogueado"
+      class="botonHover"
+      (click)="handleClick()"
+    >
       Cerrar Sesión
     </button>
+
+    <div class="Acceso" >
+      <button class="botonHover" type="submit" routerLink="/login">
+        Login
+      </button>
+      <button class="botonHover" type="submit" routerLink="/registro">
+        Registro
+      </button>
+    </div>
   </div>
 </nav>

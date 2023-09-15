@@ -1,12 +1,13 @@
 @import "../../../styles.scss";
 
-a{
+a {
   border: none !important;
 }
-p{
+p {
   margin: 0 !important;
+  color: white !important;
 }
-button{
 
-  background-color :$amarillo-claro !important;
+.navbar {
+  background-color: black !important;
 }

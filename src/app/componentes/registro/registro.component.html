@@ -1,1 +1,39 @@
-<p>registro works!</p>
+<div class="login-container">
+  <img src="../../../assets/logo.png" alt="logo" />
+  <h1>Iniciar Sesión</h1>
+  <form id="login-form">
+    <div class="input-container">
+      <input
+        type="text"
+        name="nombre"
+        placeholder="Nombre"
+        required
+        [(ngModel)]="usuario.nombre"
+      />
+    </div>
+    <div class="input-container">
+      <input
+        type="text"
+        name="email"
+        placeholder="Correo"
+        required
+        [(ngModel)]="usuario.email"
+      />
+    </div>
+
+    <div class="input-container">
+      <input
+        type="password"
+        name="password"
+        placeholder="Contraseña"
+        required
+        [(ngModel)]="usuario.password"
+      />
+    </div>
+    <h3 *ngIf="error" class="error">{{ mensaje }}</h3>
+
+    <button type="submit" (click)="Registrar()">Registrarse</button>
+  </form>
+
+  <div class=""></div>
+</div>

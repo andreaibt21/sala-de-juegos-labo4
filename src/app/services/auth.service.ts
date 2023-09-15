@@ -8,58 +8,88 @@ import { Router } from '@angular/router';
 export class AuthService {
   constructor(private afauth: AngularFireAuth, private router: Router) {}
 
-  async login(email: string, password: string) {
+  async login(email: string, password: string): Promise<string> {
+    let mensaje: string = '';
+
     try {
-      return await this.afauth.signInWithEmailAndPassword(email, password);
+      await this.afauth.signInWithEmailAndPassword(email, password);
+      return mensaje;
     } catch (error: any) {
       switch (error.code) {
         case 'auth/invalid-email':
-          console.log('Credenciales inválidas');
+          mensaje = 'Correo inválido';
+          console.log('Correo inválido');
           break;
         case 'auth/user-not-found':
-          console.log('Credenciales inválidas');
+          mensaje = 'Usuario no encontrado';
+          console.log('Usuario no encontrado');
           break;
         case 'auth/wrong-password':
-          console.log('Credenciales inválidas');
+        case 'auth/missing-password':
+          mensaje = 'Contraseña inválida';
+          console.log('Contraseña inválida');
           break;
         case 'auth/internal-error':
-          console.log('Credenciales inválidas');
+          mensaje = 'Error interno';
+          console.log('Error interno');
           break;
         case 'auth/too-many-requests':
-          console.log('Credenciales inválidas');
+          mensaje = 'Muchas llamadas en poco tiempo';
+          console.log('Muchas llamadas en poco tiempo');
           break;
         default:
+          mensaje = 'error.message';
           console.log(error.message);
           break;
       }
-      return null;
+      return mensaje;
     }
   }
-  async registro(email: string, password: string) {
+  async registro(email: string, password: string): Promise<string> {
+    let mensaje: string = '';
+
     try {
-      return await this.afauth.createUserWithEmailAndPassword(email, password);
+      await this.afauth.createUserWithEmailAndPassword(email, password);
+      return mensaje;
     } catch (error: any) {
       switch (error.code) {
         case 'auth/invalid-email':
-          console.log('Credenciales inválidas');
+          mensaje = 'Correo inválido';
+          console.log('Correo inválido');
           break;
-        case 'auth/user-not-found':
-          console.log('Credenciales inválidas');
+        case 'auth/email-already-in-use':
+          mensaje = 'Este correo ya está registrado';
+          console.log('Este correo ya está registrado');
           break;
-        case 'auth/wrong-password':
-          console.log('Credenciales inválidas');
+        case 'auth/email-already-exists':
+          mensaje = 'Este correo ya está registrado';
+          console.log('Este correo ya está registrado');
+          break;
+        case 'auth/invalid-password':
+          mensaje = 'Contraseña inválida';
+          console.log('Contraseña inválida');
+          break;
+        case 'auth/weak-password':
+          mensaje =
+            'Error, ingrese una contraseña que tenga mas de 5 carácteres';
+          console.log(
+            'Error, ingrese una contraseña que tenga mas de 5 carácteres'
+          );
           break;
         case 'auth/internal-error':
-          console.log('Credenciales inválidas');
+          mensaje = 'Error interno';
+          console.log('Error interno');
           break;
         case 'auth/too-many-requests':
-          console.log('Credenciales inválidas');
+          mensaje = 'Muchas llamadas en poco tiempo';
+          console.log('Muchas llamadas en poco tiempo');
           break;
         default:
+          mensaje = error.message;
           console.log(error.message);
           break;
       }
-      return null;
+      return mensaje;
     }
   }
   getUsuarioLogueado() {

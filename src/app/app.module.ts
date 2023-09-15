@@ -48,8 +48,8 @@ const firebaseConfig = {
     FormsModule,
     AppRoutingModule,
     NgbModule,
-  
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,9 +5,9 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 400px;
-  padding: 30px;
+  padding: 10px 25px;
   text-align: center;
-  margin: 50px auto;
+  margin: 25px auto;
 }
 
 .login-container img {
@@ -28,8 +28,7 @@ h1 {
   text-align: left;
 }
 
-input[type="text"],
-input[type="password"] {
+input {
   width: 100%;
   padding: 10px;
   border: none;
@@ -41,20 +40,16 @@ input[type="password"] {
   outline: none;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
-  border-bottom-color: #fff; /* Set it to the same color as the initial state */
-}
-
 button {
   background-color: $amarillo-claro;
   color: #24261a;
-  padding: 12px 120px; /* Increased padding to make the button wider */
+  padding: 12px 10px;
   border: 1px solid black;
   border-radius: 54px;
   cursor: pointer;
-  margin: 10px;
+  margin: 10px 0;
   font-weight: bold;
+  width: 100%;
   transition: background-color 0.3s ease-in-out;
 }
 
@@ -64,19 +59,8 @@ button:hover {
   color: #fff;
 }
 
-.extra-options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 15px;
-}
 
-.contact-buttons {
-  display: none; /* Remove contact buttons */
-}
 
-.credit {
-  color: #fff;
-  margin-top: 10px;
-  font-size: 12px;
+.error {
+  color: red;
 }
