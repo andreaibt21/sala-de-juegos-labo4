@@ -1,18 +1,24 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private afauth: AngularFireAuth, private router: Router) {}
+  constructor(
+    private afauth: AngularFireAuth,
+    private storage: StorageService,
+    private router: Router
+  ) {}
 
   async login(email: string, password: string): Promise<string> {
     let mensaje: string = '';
 
     try {
-      await this.afauth.signInWithEmailAndPassword(email, password);
+     //await this.afauth.signInWithEmailAndPassword(email, password);
+        this.storage.grabarTiempoSesionIniciada(email);
       return mensaje;
     } catch (error: any) {
       switch (error.code) {
@@ -39,17 +45,17 @@ export class AuthService {
           break;
         default:
           mensaje = 'error.message';
-          console.log(error.message);
+          console.log(error);
           break;
       }
       return mensaje;
     }
   }
-  async registro(email: string, password: string): Promise<string> {
+  async registro(nombre: string, email: string, password: string): Promise<string> {
     let mensaje: string = '';
-
     try {
       await this.afauth.createUserWithEmailAndPassword(email, password);
+      this.storage.addUsuario(nombre, email)
       return mensaje;
     } catch (error: any) {
       switch (error.code) {

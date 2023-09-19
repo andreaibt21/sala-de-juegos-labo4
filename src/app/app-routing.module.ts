@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
@@ -19,9 +20,9 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent,
-    //loadChildren: () => import('./componentes/login/login.component')
-    //.then(  )
+    //  component: LoginComponent,
+    loadChildren: () =>
+      import('./componentes/login/login.module').then((mod) => mod.LoginModule),
   },
   {
     path: 'home',

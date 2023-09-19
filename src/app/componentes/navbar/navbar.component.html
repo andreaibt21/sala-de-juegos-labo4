@@ -10,13 +10,13 @@
     </p>
     <p class="navbar-brand" href="#">Sala de juegos de Andrea</p>
     <button
-      *ngIf="usuarioLogueado | async as usuarioLogueado"
+      *ngIf="usuarioLogueado | async as usuarioLogueado ; else then_content"
       class="botonHover"
       (click)="handleClick()"
     >
       Cerrar Sesión
     </button>
-
+    <ng-template #then_content>
     <div class="Acceso" >
       <button class="botonHover" type="submit" routerLink="/login">
         Login
@@ -25,5 +25,6 @@
         Registro
       </button>
     </div>
+  </ng-template>
   </div>
 </nav>

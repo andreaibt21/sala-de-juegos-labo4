@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
   handleClick = () => {
     this.AuthService.cerrarSesion();
   };
+  
   handleVerificarUsuario = () => {
     this.AuthService.getUsuarioLogueado().subscribe((res) => {
       console.log(res?.email);

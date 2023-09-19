@@ -20,8 +20,8 @@ export class RegistroComponent {
 
   Registrar() {
     console.log(this.usuario);
-    const { email, password } = this.usuario;
-    this.AuthService.registro(email, password).then((res) => {
+    const { nombre, email, password } = this.usuario;
+    this.AuthService.registro(nombre, email, password).then((res) => {
       if (res !== '') {
         this.error = true;
         this.mensaje = res;
@@ -30,6 +30,7 @@ export class RegistroComponent {
       } else {
         this.error = false;
         console.log('se registró', res);
+        this.router.navigateByUrl('home');
       }
     });
   }
