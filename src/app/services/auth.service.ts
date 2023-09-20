@@ -17,8 +17,8 @@ export class AuthService {
     let mensaje: string = '';
 
     try {
-     //await this.afauth.signInWithEmailAndPassword(email, password);
-        this.storage.grabarTiempoSesionIniciada(email);
+      await this.afauth.signInWithEmailAndPassword(email, password);
+      this.storage.addlog(email);
       return mensaje;
     } catch (error: any) {
       switch (error.code) {
@@ -51,11 +51,15 @@ export class AuthService {
       return mensaje;
     }
   }
-  async registro(nombre: string, email: string, password: string): Promise<string> {
+  async registro(
+    nombre: string,
+    email: string,
+    password: string
+  ): Promise<string> {
     let mensaje: string = '';
     try {
       await this.afauth.createUserWithEmailAndPassword(email, password);
-      this.storage.addUsuario(nombre, email)
+      this.storage.addUsuario(email);
       return mensaje;
     } catch (error: any) {
       switch (error.code) {
