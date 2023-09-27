@@ -27,7 +27,7 @@ export class LoginComponent {
         console.log(res);
       } else {
         this.error = false;
-        this.router.navigateByUrl('home');
+        this.router.navigateByUrl('home/secciones');
         console.log('se logueó', res);
       }
     });

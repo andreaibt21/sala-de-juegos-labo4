@@ -10,12 +10,12 @@ export class NavbarComponent implements OnInit {
   usuarioLogueado = this.AuthService.getUsuarioLogueado();
   constructor(private AuthService: AuthService) {}
 
-  ngOnInit(): void {}
+ ngOnInit(): void {}
 
   handleClick = () => {
     this.AuthService.cerrarSesion();
   };
-  
+
   handleVerificarUsuario = () => {
     this.AuthService.getUsuarioLogueado().subscribe((res) => {
       console.log(res?.email);

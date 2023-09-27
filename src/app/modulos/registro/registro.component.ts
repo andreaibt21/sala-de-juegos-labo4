@@ -30,7 +30,7 @@ export class RegistroComponent {
       } else {
         this.error = false;
         console.log('se registró', res);
-        this.router.navigateByUrl('home');
+        this.router.navigateByUrl('home/secciones');
       }
     });
   }
