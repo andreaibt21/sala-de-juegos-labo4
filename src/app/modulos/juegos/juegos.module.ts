@@ -7,6 +7,7 @@ import { MijuegoComponent } from './mijuego/mijuego.component';
 import { MayoromenorComponent } from './mayoromenor/mayoromenor.component';
 import { PreguntadosComponent } from './preguntados/preguntados.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
+import { SeccionJuegosComponent } from './seccion-juegos/seccion-juegos.component';
 
 @NgModule({
   imports: [CommonModule, JuegosRoutingModule],
@@ -16,6 +17,7 @@ import { AhorcadoComponent } from './ahorcado/ahorcado.component';
     MayoromenorComponent,
     PreguntadosComponent,
     AhorcadoComponent,
+    SeccionJuegosComponent,
   ],
   exports: [JuegosComponent],
 })

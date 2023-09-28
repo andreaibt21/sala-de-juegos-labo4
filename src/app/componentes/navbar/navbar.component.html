@@ -9,22 +9,20 @@
       {{ usuarioLogueado.email }}
     </p>
     <p class="navbar-brand" href="#">Sala de juegos de Andrea</p>
-    <button
-      *ngIf="usuarioLogueado | async as usuarioLogueado ; else then_content"
-      class="botonHover"
-      (click)="handleClick()"
-    >
-      Cerrar Sesión
-    </button>
-    <ng-template #then_content>
-    <div class="Acceso" >
-      <button class="botonHover" type="submit" routerLink="/login">
-        Login
-      </button>
-      <button class="botonHover" type="submit" routerLink="/registro">
-        Registro
-      </button>
+    <div *ngIf="usuarioLogueado | async as usuarioLogueado; else then_content">
+      <button class="botonHover" (click)="handleCerrar()">Cerrar Sesión</button>
+      <button class="botonHover" (click)="handleAtras()">Atrás</button>
     </div>
-  </ng-template>
+
+    <ng-template #then_content>
+      <div class="Acceso">
+        <button class="botonHover" type="submit" routerLink="/login">
+          Login
+        </button>
+        <button class="botonHover" type="submit" routerLink="/registro">
+          Registro
+        </button>
+      </div>
+    </ng-template>
   </div>
 </nav>

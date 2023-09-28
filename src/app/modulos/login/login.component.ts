@@ -23,12 +23,12 @@ export class LoginComponent {
       if (res !== '') {
         this.error = true;
         this.mensaje = res;
-        console.log('errooooor');
-        console.log(res);
+        console.log('errooooor login');
+     //   console.log(res);
       } else {
         this.error = false;
-        this.router.navigateByUrl('home/secciones');
-        console.log('se logueó', res);
+        this.router.navigateByUrl('home');
+      //  console.log('se logueó', res);
       }
     });
   }

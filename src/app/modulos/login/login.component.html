@@ -22,9 +22,9 @@
     </div>
     <h3 *ngIf="error" class="error">{{ mensaje }}</h3>
 
-    <button type="submit" (click)="AccesoDirecto()">Acceso directo</button>
+    <button  [(ngModel)]="usuario.email" type="submit" (click)="AccesoDirecto()">Acceso directo</button>
     <button type="submit" (click)="Ingresar()">Ingresar</button>
-  
+
   </form>
 
   <div class="">

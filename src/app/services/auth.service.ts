@@ -19,6 +19,7 @@ export class AuthService {
     try {
       await this.afauth.signInWithEmailAndPassword(email, password);
       this.storage.addlog(email);
+      this.storage.grabarTiempoSesionIniciada2(email);
       return mensaje;
     } catch (error: any) {
       switch (error.code) {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFirestore} from '@angular/fire/compat/firestore';
 import { formatDate } from '@angular/common';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
@@ -11,17 +11,14 @@ import 'firebase/compat/auth';
 export class StorageService {
   usuario: any;
   coleccion: string = 'usuarios';
-  today = new Date();
-  jstoday = '';
-
   constructor(private db: AngularFirestore, private router: Router) {
-    this.jstoday = formatDate(this.today, 'dd-MMM-yyyy hh:mm:ss a', 'en-US');
+
   }
 
   public async addUsuario(mail: string) {
     this.usuario = {
       mail: mail,
-      creado: this.jstoday,
+      creado: formatDate(new Date(), 'dd-MMM-yyyy hh:mm:ss a', 'en-US'),
     };
     console.log(this.usuario);
     this.db
@@ -38,7 +35,7 @@ export class StorageService {
   public async addlog(mail: string) {
     this.usuario = {
       mail: mail,
-      log: this.jstoday,
+      log: formatDate(new Date(), 'dd-MMM-yyyy hh:mm:ss a', 'en-US'),
     };
     console.log(this.usuario);
     this.db
@@ -51,7 +48,21 @@ export class StorageService {
         console.log('errorr', error);
       });
   }
-
+  grabarTiempoSesionIniciada2(mail: string) {
+   console.log(  this.db.collection(this.coleccion).get())
+      // .where('mail', '==', mail)
+      // .get()
+      // .then((querySnapshot) => {
+      //   querySnapshot.forEach((doc) => {
+      //     doc.ref.update({
+      //       log: this.jstoday,
+      //     });
+      //   });
+      // })
+      // .catch((error) => {
+      //   console.log('Error grabando: ', error);
+      // });
+  }
   grabarTiempoSesionIniciada(mail: string) {
     firebase
       .firestore()
@@ -61,7 +72,7 @@ export class StorageService {
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           doc.ref.update({
-            log: this.jstoday,
+            log: formatDate(new Date(), 'dd-MMM-yyyy hh:mm:ss a', 'en-US')
           });
         });
       })

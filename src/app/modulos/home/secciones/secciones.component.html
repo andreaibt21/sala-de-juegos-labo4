@@ -2,18 +2,14 @@
   class="home-container d-flex flex-column justify-content-center align-items-center"
 >
   <h1>Home</h1>
-  <div class="button-container">
-    <button type="submit" routerLink="/ahorcado">Ahorcado</button>
 
-    <button type="submit" routerLink="/mayoromenor">Mayor o Menor</button>
+  <div class="button-container">
+    <button type="submit" (click)="handleJuegos()">juegos</button>
   </div>
   <div class="button-container">
-    <button type="submit" routerLink="/preguntados">Preguntados</button>
-
-    <button type="submit" (click)="handleJuegos()">juegos</button>
+    <button type="submit" (click)="handleChat()">Chat</button>
   </div>
   <div class="button-container">
     <button type="submit" (click)="handleQuiensoy()">Quien soy</button>
   </div>
-
 </div>

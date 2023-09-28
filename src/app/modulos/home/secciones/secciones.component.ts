@@ -20,6 +20,10 @@ export class SeccionesComponent {
     this.router.navigateByUrl('juegos');
 
   }
+  handleChat(){
+    console.log('chat')
+    this.router.navigateByUrl('home/chat');
 
+  }
 
 }

@@ -29,7 +29,12 @@ const routes: Routes = [
         path: 'ahorcado',
         loadChildren: () =>
           import(`./ahorcado/ahorcado.module`).then((m) => m.AhorcadoModule),
+      },{
+        path: '',
+        loadChildren: () =>
+          import(`./seccion-juegos/seccion-juegos.module`).then((m) => m.SeccionJuegosModule),
       },
+
     ],
   },
 ];

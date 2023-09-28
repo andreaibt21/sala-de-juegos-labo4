@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -8,14 +8,20 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavbarComponent implements OnInit {
   usuarioLogueado = this.AuthService.getUsuarioLogueado();
-  constructor(private AuthService: AuthService) {}
+  constructor(private AuthService: AuthService, private _location: Location) {}
 
- ngOnInit(): void {}
+  ngOnInit(): void {}
 
-  handleClick = () => {
+  handleCerrar = () => {
     this.AuthService.cerrarSesion();
   };
-
+  handleAtras = () => {
+    if (this._location.path(true) !== '/home/secciones') {
+      this._location.back();
+    }
+    console.log(this._location.path(true));
+    // this._location.path;
+  };
   handleVerificarUsuario = () => {
     this.AuthService.getUsuarioLogueado().subscribe((res) => {
       console.log(res?.email);

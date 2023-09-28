@@ -7,16 +7,21 @@ import { HomeComponent } from './home.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent, children: [
+    component: HomeComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import(`./secciones/secciones.module`).then((m) => m.SeccionesModule),
+      },
       {
         path: 'quiensoy',
         loadChildren: () =>
           import(`./quien-soy/quiensoy.module`).then((m) => m.QuiensoyModule),
-      },
-      {
-        path: 'secciones',
+      },{
+        path: 'chat',
         loadChildren: () =>
-          import(`./secciones/secciones.module`).then((m) => m.SeccionesModule),
+          import(`./chat/chat.module`).then((m) => m.ChatModule),
       },
     ],
   },

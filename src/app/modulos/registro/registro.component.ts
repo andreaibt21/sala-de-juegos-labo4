@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class RegistroComponent {
   public usuario = {
-    nombre: "",
+    nombre: '',
     email: '',
     password: '',
   };
@@ -17,7 +17,6 @@ export class RegistroComponent {
 
   constructor(private AuthService: AuthService, private router: Router) {}
 
-
   Registrar() {
     console.log(this.usuario);
     const { nombre, email, password } = this.usuario;
@@ -25,12 +24,12 @@ export class RegistroComponent {
       if (res !== '') {
         this.error = true;
         this.mensaje = res;
-        console.log('errooooor');
-        console.log(res);
+       // console.log('errooooor');
+       // console.log(res);
       } else {
         this.error = false;
-        console.log('se registró', res);
-        this.router.navigateByUrl('home/secciones');
+      //  console.log('se registró', res);
+        this.router.navigateByUrl('home');
       }
     });
   }
