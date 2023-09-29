@@ -7,7 +7,7 @@ import { ChatService } from 'src/app/services/chat.service';
   styleUrls: ['./chat.component.scss'],
 })
 export class ChatComponent implements OnInit {
-  public message: string = '';
+  public mensaje = '';
 
   constructor(public chatService: ChatService) {}
 
@@ -16,19 +16,18 @@ export class ChatComponent implements OnInit {
   }
 
   sendMessage() {
-    console.log('DDD enviado');
-   // if (this.message.length > 0) {
+    if (this.mensaje.length > 0) {
       this.chatService
-        .addMessage("holi")
+        .addMessage(this.mensaje)
         ?.then(() => {
-          console.log('mensaje enviado');
+          console.log('Message sent');
         })
         .catch(() => {
-          console.log('Error al enviar');
+          console.log('Error sending message');
         })
         .finally(() => {
-          this.message = '';
+          this.mensaje = '';
         });
-   // }
+    }
   }
 }

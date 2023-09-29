@@ -1,0 +1,64 @@
+<link
+  href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+  rel="stylesheet"
+/>
+<div class="rounded container px-3 py-1 mt-5">
+  <div class="row">
+    <div class="rounded col-md-8 bg-white">
+      <div class="border-bottom p-2 m-0" >
+        <h4 class="text-center  m-0">✨ Chat ✨</h4>
+      </div>
+      <div class="chat-message">
+        <ul class="chat">
+          <div *ngFor="let chat of chatService.chats">
+            <!-- EL OTRO  -->
+            <div *ngIf="chatService.userLog.uid != chat.uid; else then_content">
+              <li class="left clearfix">
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font texto">
+                      {{ chat.email }}
+                    </strong>
+                    <small class="pull-right text-muted">
+                      <p class="texto">{{ chat.date }}</p>
+                    </small>
+                  </div>
+                  <p class="primary-font texto">{{ chat.message }}</p>
+                </div>
+              </li>
+            </div>
+            <ng-template #then_content>
+              <!-- YO -->
+              <li class="right clearfix">
+                <div class="chat-body clearfix">
+                  <div class="header">
+                    <strong class="primary-font texto">Yo</strong>
+                    <small class="pull-right text-muted">
+                      <p class="texto">{{ chat.date }}</p></small
+                    >
+                  </div>
+                  <p class="primary-font texto">{{ chat.message }}</p>
+                </div>
+              </li>
+            </ng-template>
+          </div>
+        </ul>
+      </div>
+      <div class="chat-box bg-white">
+        <div class="footer">
+          <input
+            name="mensaje"
+            class="w-75 border no-shadow no-rounded"
+            placeholder="Escriba su mensaje"
+            [(ngModel)]="mensaje"
+            (keyup.enter)="sendMessage()"
+          />
+
+          <button class=" " (click)="sendMessage()" type="button">
+            Enviar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
