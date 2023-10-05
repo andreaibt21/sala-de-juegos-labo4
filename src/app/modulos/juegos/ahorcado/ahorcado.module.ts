@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { AhorcadoRoutingModule } from './ahorcado-routing.module';
 
 
-
 @NgModule({
   declarations: [],
   imports: [
@@ -11,4 +10,4 @@ import { AhorcadoRoutingModule } from './ahorcado-routing.module';
     AhorcadoRoutingModule
   ]
 })
-export class AhorcadoModule { }
+export class AhorcadoModule {}

@@ -8,17 +8,18 @@ import { MayoromenorComponent } from './mayoromenor/mayoromenor.component';
 import { PreguntadosComponent } from './preguntados/preguntados.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 import { SeccionJuegosComponent } from './seccion-juegos/seccion-juegos.component';
+import { TecladoModule } from "../../componentes/teclado/teclado.module";
 
 @NgModule({
-  imports: [CommonModule, JuegosRoutingModule],
-  declarations: [
-    JuegosComponent,
-    MijuegoComponent,
-    MayoromenorComponent,
-    PreguntadosComponent,
-    AhorcadoComponent,
-    SeccionJuegosComponent,
-  ],
-  exports: [JuegosComponent],
+    declarations: [
+        JuegosComponent,
+        MijuegoComponent,
+        MayoromenorComponent,
+        PreguntadosComponent,
+        AhorcadoComponent,
+        SeccionJuegosComponent,
+    ],
+    exports: [JuegosComponent],
+    imports: [CommonModule, JuegosRoutingModule, TecladoModule]
 })
 export class JuegosModule {}

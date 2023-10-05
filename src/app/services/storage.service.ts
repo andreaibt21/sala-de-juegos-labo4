@@ -48,6 +48,7 @@ export class StorageService {
         console.log('errorr', error);
       });
   }
+
   grabarTiempoSesionIniciada2(mail: string) {
    console.log(  this.db.collection(this.coleccion).get())
       // .where('mail', '==', mail)
@@ -97,6 +98,22 @@ export class StorageService {
       })
       .catch((error) => {
         console.log('Error grabando: ', error);
+      });
+  }
+
+  addPuntos(puntos: any, juego: any, jugador: any)
+  {
+    var puntuacion  = {
+      puntos: puntos,
+      juego: juego,
+      jugador: jugador,
+      fecha: formatDate(new Date(), 'dd-MMM-yyyy hh:mm:ss a', 'en-US')
+    }
+    this.db.collection('puntos').add(puntuacion)
+    .then(()=> {
+
+    }).catch((error) => {
+     console.log(error);
       });
   }
 }

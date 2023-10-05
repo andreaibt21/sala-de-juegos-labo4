@@ -1,0 +1,89 @@
+.game-container {
+  width: 845px;
+  height: 363px;
+  padding: 20px;
+  margin: 0px auto;
+  border: 2px solid purple;
+  border-radius: 5px;
+  overflow: hidden;
+  .dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    float: left;
+    background-color: #dba905;
+    &.red {
+      background-color: darkred;
+      transition: background-color 0.5s;
+    }
+    &.blue {
+      background-color: darkblue;
+      transition: background-color 0.5s;
+    }
+    &.green {
+      background-color: darkgreen;
+      transition: background-color 0.5s;
+    }
+    &.pink {
+      background-color: deeppink;
+      transition: background-color 0.5s;
+    }
+    &.yellow {
+      background-color: greenyellow;
+      transition: background-color 0.5s;
+    }
+    &.purple {
+      background-color: purple;
+      transition: background-color 0.5s;
+    }
+    &.orange {
+      background-color: rgb(238, 255, 0);
+      transition: background-color 0.5s;
+    }
+    &.cyan {
+      background-color: darkcyan;
+      transition: background-color 0.5s;
+    }
+    &.grey {
+      background-color: brown;
+      transition: background-color 0.5s;
+    }
+    &.magenta {
+      background-color: darkmagenta;
+      transition: background-color 0.5s;
+    }
+  }
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.container {
+  width: 100%;
+}
+.reglas-container {
+  p {
+    width: 300px;
+  }
+}
+.mensajes{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:30px ;
+
+  div{
+    background-color: white;
+    padding: 20px;
+    font-size:20px;
+    border-radius: 10px;
+
+  }
+
+}

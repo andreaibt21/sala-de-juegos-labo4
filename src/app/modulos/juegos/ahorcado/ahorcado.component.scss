@@ -1,0 +1,39 @@
+.container {
+ // max-width: 960px;
+  margin-top: 20px;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+.mensaje{
+  height: 20px;
+  color: red;
+}
+.mensaje-gana{
+  height: 20px;
+  color: rgb(26, 184, 26);
+}
+img{
+width: 400px;
+height: 400px;
+
+}
+h2{
+  padding: 20px
+}
+.text{
+color: #dba905;
+margin-left:10px;
+
+}
