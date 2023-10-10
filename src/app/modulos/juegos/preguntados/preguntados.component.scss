@@ -1,0 +1,115 @@
+@import "../../../../styles.scss";
+
+.container-preguntados {
+  color: white;
+}
+.izquierda {
+  padding: 40px;
+  width: 50%;
+  background-color: black;
+  margin-left: 60px;
+  border-radius: 20px;
+}
+p{
+  margin-top:10px;
+}
+.blue {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.red {
+  width: 100%;
+  padding: 10px;
+}
+.opciones {
+  margin-left: 70px;
+  width: 80%;
+  padding: 10px;
+  label {
+    margin-left: 20px;
+  }
+  &:hover {
+    color: $amarillo-base;
+  }
+}
+
+h3 {
+  color: $amarillo-base;
+}
+
+button {
+  background-color: $amarillo-claro;
+  color: #24261a;
+  padding: 12px 10px;
+  border: 1px solid black;
+  border-radius: 54px;
+  cursor: pointer;
+  margin: 20px;
+  font-weight: bold;
+  width: 200px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: black;
+  border: 1px solid $amarillo-claro;
+  color: #fff;
+}
+.jugarbutton{
+  width:400px !important;
+
+}
+span {
+  background-color: $amarillo-base;
+  color: white;
+  padding: 10px;
+  margin-left: 20pxlp;
+  border-radius: 20px;
+}.cell {
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+}
+.circle {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: whiteSmoke;
+  box-shadow: 4px -40px 60px 5px rgba(0, 0, 0, 0.911) inset;
+}
+
+.loader {
+  background: linear-gradient(to right, rgb(0, 0, 0) 50%, transparent 50%);
+  animation: spin 1s infinite linear;
+}
+.loader:before {
+  display: block;
+  content: '';
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px;
+  height: 90px;
+  background: $amarillo-base;
+  border-radius: 50%;
+}
+
+.spin {
+  animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.pulse {
+  animation: pulse 1s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+  from { transform: scale(0.9); }
+  to { transform: scale(1.2); }
+}
+

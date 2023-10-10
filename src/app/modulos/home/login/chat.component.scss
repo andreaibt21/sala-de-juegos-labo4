@@ -1,22 +1,17 @@
 @import "../../../../styles.scss";
 
-
 .bg-white {
   background-color: #fff;
 }
-
 
 .texto {
   font-size: 1rem;
   color: $amarillo-base !important;
 }
 
-
 .chat-message {
-
-  height:50vh;
+  height: 50vh;
   overflow-y: scroll;
-
   padding: 20px;
 }
 
@@ -28,7 +23,6 @@
 .chat-message {
   background: #ffffff;
 }
-
 
 .chat-body {
   padding-bottom: 20px;
@@ -104,7 +98,6 @@
 }
 
 .chat-box {
-
   padding: 15px;
   border-top: 1px solid #eee;
   transition: all 0.5s ease;
@@ -143,7 +136,7 @@ input {
   transition: border-bottom-color 0.3s ease-in-out;
   outline: none;
 }
-.footer{
+.footer {
   display: flex;
   justify-content: space-around;
 }
@@ -165,4 +158,20 @@ button:hover {
   background-color: black;
   border: 1px solid $amarillo-claro;
   color: #fff;
+}
+
+.scroller {
+  overflow: auto;
+  height: 300px;
+
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.scroller .scroller-content .item {
+  height: 20px;
+
+  transform: translateZ(
+    0
+  ); /* fixes a bug in Safari iOS where the scroller doesn't update */
 }

@@ -1,1 +1,56 @@
-<p>preguntados works!</p>
+<div class="rounded container container-preguntados px-4 py-3 mt-3 text-center">
+  <div *ngIf="this.jugar; else then_content">
+    <div class="col-lg-6 mx-auto red">
+      <div class="blue">
+        <div class="d-flex izquierda flex-column">
+          <h3>
+            Pregunta número {{ this.numPreguntas + 1 }} <span> Puntos:
+            {{ this.puntos }}</span>
+          </h3>
+          <p class="lead mb-4">¿De qué autor o autora es la siguiente obra?</p>
+          <!-- opciones -->
+          <div
+            *ngFor="let o of this.opciones.sort()"
+            class="form-check form-check-inline d-flex opciones"
+          >
+          <input
+          (change)="setOpcionElegida(opcionElegida.value)"
+          #opcionElegida
+          class="form-check-input"
+              type="radio"
+              name="opcionElegida"
+              id="{{ o }}"
+              value="{{ o }}"
+            />
+            <label class="lead form-check-label" for="{{ o }}">{{o}}</label>
+          </div>
+        </div>
+
+
+        <div *ngIf="this.mostrar" class="cell">
+          <div class="circle loader"></div>
+        </div>
+
+
+        <div *ngIf="this.mostrar === false">
+          <img
+          class="rounded d-block mx-auto mb-4"
+          src="{{ this.src }}"
+          alt=""
+          width="300px"
+          height="300px"
+          />
+        </div>
+        </div>
+
+      <button type="button" (click)="responder()" >
+        Contestar
+      </button>
+    </div>
+  </div>
+  <ng-template #then_content>
+    <button type="button " class="jugarbutton pulse botonHover"(click)="setJugar()" >
+JUGAR DE NUEVO    </button>
+  </ng-template>
+  <br />
+</div>

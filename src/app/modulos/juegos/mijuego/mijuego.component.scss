@@ -1,9 +1,11 @@
+@import "../../../../styles.scss";
+
 .game-container {
-  width: 845px;
-  height: 363px;
+  width: 863px;
+  height: 377px;
   padding: 20px;
   margin: 0px auto;
-  border: 2px solid purple;
+  border: 10px dotted purple;
   border-radius: 5px;
   overflow: hidden;
   .dot {
@@ -67,23 +69,89 @@
   width: 100%;
 }
 .reglas-container {
+  //border: 1px solid black;
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   p {
     width: 300px;
+    text-align: justify;
   }
 }
-.mensajes{
-  width: 100%;
+.mensajes {
+  margin: 20px;
+  width: 70%;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top:30px ;
+  margin-top: 30px;
 
-  div{
+  div {
     background-color: white;
     padding: 20px;
-    font-size:20px;
+    font-size: 20px;
     border-radius: 10px;
-
   }
+}
+.container-mijuego {
+  padding-top: 10vh;
+}
 
+button {
+  background-color: $amarillo-claro;
+  color: #24261a;
+  padding: 12px 10px;
+  border: 1px solid black;
+  border-radius: 54px;
+  cursor: pointer;
+  margin: 20px;
+  font-weight: bold;
+  width: 200px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: black;
+  border: 1px solid $amarillo-claro;
+  color: #fff;
+}
+
+.gelatine {
+  animation: gelatine 0.9s infinite;
+}
+@keyframes gelatine {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+.pulse {
+  animation: pulse 1s infinite ease-in-out alternate;
+}
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .game-container {
+    width: 700px;
+    height: 450px;
+  }
 }

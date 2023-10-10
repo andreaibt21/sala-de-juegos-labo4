@@ -11,6 +11,7 @@ import { ErrorComponent } from './componentes/error/error.component';
 import { Error404Component } from './componentes/error404/error404.component';
 import { NavbarComponent } from './componentes/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HacerAnonSiNullPipe } from './pipes/hacerAnonSiNull.pipe';
 
 
 
@@ -41,7 +42,7 @@ const firebaseConfig = {
     NgbModule,ReactiveFormsModule,
     AngularFireModule.initializeApp(firebaseConfig),
   ],
-  providers: [],
+  providers: [HacerAnonSiNullPipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

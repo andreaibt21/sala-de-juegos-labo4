@@ -16,15 +16,17 @@ export class NavbarComponent implements OnInit {
     this.AuthService.cerrarSesion();
   };
   handleAtras = () => {
-    if (this._location.path(true) !== '/home/secciones') {
-      this._location.back();
-    }
+    if (this._location.path(true) !== '/home/secciones' && this._location.path(true) !== '/home') {
+    this._location.back();
     console.log(this._location.path(true));
-    // this._location.path;
+    }
+
   };
   handleVerificarUsuario = () => {
-    this.AuthService.getUsuarioLogueado().subscribe((res) => {
+    this.AuthService.getUsuarioLogueado().subscribe(
+      (res) => {
       console.log(res?.email);
-    });
+      }
+    );
   };
 }

@@ -1,14 +1,30 @@
-<div>
-  <h1>mi juego</h1>
+<div class="container-mijuego">
   <div class="d-flex container">
     <div class="reglas-container">
-      <h1>Reglas del juego</h1>
+      <h1>Fill With Dots</h1>
       <p>
-        Se te presenta un rectángulo en la pantalla. Tienes 25 segundos para
-        llenar el rectángulo de círculos. Para ello debes pasar el mouse por
-        toda el area. El objetivo es hacerlo lo más rápido posible; si se acaba
-        el tiempo y no has llenado el rectángulo, perderás. ¡Mucha suerte!
+        Tienes 25 segundos para llenar el rectángulo de círculos. Para ello
+        debes pasar el mouse por toda el area. El objetivo es hacerlo lo más
+        rápido posible; si se acaba el tiempo y no has llenado el rectángulo,
+        perderás. ¡Mucha suerte!
       </p>
+
+
+      <div class="mensajes">
+        <div class="gelatine" *ngIf="isGameStarted && !isGameEnded && !isWon">{{ contador }}</div>
+        <div *ngIf="!isGameStarted && !isGameEnded">
+          ¡¡Mueve el mouse dentro del rectangulo !!
+        </div>
+        <div *ngIf="isGameStarted && isGameEnded && isWon">
+          ¡Muy bien, ganasteee!
+        </div>
+        <div *ngIf="isGameStarted && isGameEnded && !isWon">
+          ¡Oh no!¡te faltaron {{ cleanCount }} circulos!
+        </div>
+      </div>
+      <div *ngIf="isGameEnded">
+              <button class="pulse" (click)="startAgain(dotRefs)">JUGAR DE NUEVO</button>
+      </div>
     </div>
     <div class="game-container">
       <div
@@ -20,16 +36,5 @@
     </div>
   </div>
 
-  <div class="mensajes">
-    <div *ngIf="isGameStarted && !isGameEnded && !isWon">{{ contador }}</div>
-    <div *ngIf="!isGameStarted && !isGameEnded">
-      ¡¡Mueve el mouse dentro del rectangulo !!
-    </div>
-    <div *ngIf="isGameStarted && isGameEnded && isWon">
-      ¡Muy bien, ganasteee!
-    </div>
-    <div *ngIf="isGameStarted && isGameEnded && !isWon">
-      ¡Oh no!¡te faltaron {{ cleanCount }} circulos!
-    </div>
-  </div>
+
 </div>

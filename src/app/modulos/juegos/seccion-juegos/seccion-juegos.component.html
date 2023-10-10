@@ -1,18 +1,27 @@
 <div
-class="home-container d-flex flex-column justify-content-center align-items-center"
+  class="home-container d-flex flex-column justify-content-center align-items-center"
 >
-<div class="button-container">
-  <button type="submit" routerLink="/juegos/ahorcado">Ahorcado</button>
+<h1>Selecciona un juego</h1>
+  <div class="button-container">
+    <button type="submit" routerLink="/juegos/mijuego">
+      <img src="../../../../assets/dots.PNG" alt="" />
+      <h3>Fill With Dots</h3>
+    </button>
+    <button type="submit" routerLink="/juegos/ahorcado">
+           <img src="../../../../assets/ahorcado/Paso_0.png" alt="" />
+           <h3>Ahorcado</h3>
+      </button>
 
-  <button type="submit" routerLink="/juegos/mayoromenor">
-    Mayor o Menor
-  </button>
-</div>
-<div class="button-container">
-  <button type="submit" routerLink="/juegos/preguntados">
-    Preguntados
-  </button>
-  <button type="submit" routerLink="/juegos/mijuego">mijuego</button>
-  <!-- <button type="submit" (click)="handleClick()" routerLink="/juegos/mijuego">mijuego</button> -->
-</div>
+    <button type="submit" routerLink="/juegos/mayoromenor">
+
+      <img src="../../../../assets/carta.png" alt="" />
+      <h3>Mayor o Menor</h3>
+    </button>
+
+    <button type="submit" routerLink="/juegos/preguntados">
+      <img src="../../../../assets/Preguntados.png" alt="" />
+      <h3>Preguntados</h3>
+      </button>
+
+  </div>
 </div>

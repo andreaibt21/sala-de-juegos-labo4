@@ -5,6 +5,7 @@ import {
   QueryList,
   ViewChildren,
 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mijuego',
@@ -12,6 +13,8 @@ import {
   styleUrls: ['./mijuego.component.scss'],
 })
 export class MijuegoComponent implements OnInit, OnDestroy {
+
+  constructor( private router: Router) {}
   dots = Array.from(Array(160).keys());
   colors = [
     'red',
@@ -49,7 +52,7 @@ export class MijuegoComponent implements OnInit, OnDestroy {
     setInterval(() => {
       if (this.contador > 0) {
         this.contador--;
-      }else{
+      } else {
         this.isGameEnded = true;
       }
     }, 1000);
@@ -73,7 +76,13 @@ export class MijuegoComponent implements OnInit, OnDestroy {
       this.isGameEnded = true;
     }
   }
+  startAgain(dot: any) {
+    this.router.navigateByUrl('/RefreshComponent', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/juegos/mijuego']);
+  });
 
+   
+  }
   ngOnInit(): void {}
 
   ngOnDestroy(): void {
